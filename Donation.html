@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>Donation | The Earth Foundation</title>
+<style>
+
+header{
+       background-color: #1A2421; 
+       padding: 45px 20px;
+       text-align: center;
+       color: #ffffff;
+       margin-bottom: 0;
+      }
+
+header h1{
+          font-family: "Times New Roman", Times, serif; 
+          font-size: 40px;
+          font-weight: normal; 
+          text-decoration: underline;
+          letter-spacing: 5px; 
+          text-transform: uppercase;
+          margin: 0;
+          line-height: 1.2;
+         }
+
+header p{
+         font-family: "Times New Roman", Times, serif;
+         font-style: italic;
+         font-size: 18px;
+         margin-top: 20px;
+         letter-spacing: 1px;
+        }
+
+body{
+     background-color: #FBF3D1; 
+     font-family: "Times New Roman", Times, serif;
+     color: #2c3e50;
+     margin: 0;
+     padding: 0;
+    }
+
+.container{
+           max-width: 650px;
+           margin: 40px auto;
+           background-color: #ffffff; 
+           padding: 40px;
+           border: 1px solid black;
+           border-radius: 8px;
+           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          }
+
+h2.form-title{
+              color: #1A2421;
+              text-align: center;
+              text-decoration: underline;
+              margin-bottom: 30px;
+              text-transform: uppercase;
+              }
+
+.form-group{
+            margin-bottom: 20px;
+            }
+
+label{
+      display: block;
+      font-weight: bold;
+      color: #1A2421;
+      margin-bottom: 5px;
+     }
+
+input[type="text"], input[type="email"], input[type="tel"] {
+            						    width: 100%;
+            						    padding: 10px;
+           						    border: 1px solid #ccc;
+            						    border-radius: 4px;
+           						    box-sizing: border-box; 
+            						    font-family: serif;
+       							   }
+
+.gender-section{
+                margin: 25px 0;
+            	padding: 15px;
+            	background-color: #fcfaf2;
+            	border: 1px dashed #D97D55;
+               }
+
+.declaration-section{
+                     font-size: 14px;
+                     line-height: 1.5;
+                     margin-top: 30px;
+                    }
+
+.declaration-item{
+                  display: flex;
+                  align-items: flex-start;
+                  margin-bottom: 15px;
+                  }
+
+.declaration-item input{
+                        margin-right: 15px;
+                        margin-top: 5px;
+                       }
+
+.btn-submit{
+            display: block;
+            width: 200px;
+            margin: 30px auto 0;
+            padding: 12px;
+            background-color: #1A2421;
+            color: white;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+           }
+
+.btn-submit:hover{
+            	  background-color: #D97D55;
+        	 }
+
+footer{
+       text-align: center;
+       padding: 20px;
+       font-size: 14px;
+       color: #1A2421;
+      }
+
+.header-btn{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 20px;
+            font-family: "Times New Roman", serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+           }
+
+.header-btn:hover{
+                  background-color: #D97D55;
+                  border-color: #D97D55;
+                  }   
+.qrbtn{
+            display: block;
+            width: 200px;
+            margin: 20px auto 0;
+            padding: 12px;
+            background-color: #1A2421;
+            color: white;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<button class="header-btn" onclick="location.href='index.html'">Home</button>
+<h1>THE EARTH FOUNDATION INDIA<sup>&reg;</sup></h1>
+<p>*an initiative of The Earth Company*</p>
+</header>
+
+<div class="container">
+
+
+<form action="#" method="post">
+            
+<div class="form-group">
+<label for="name">Donation Amount:</label>
+<input type="text" id="name" name="name" required>
+</div>
+
+<div class="gender-section">
+<label>Select your payment :</label>
+<input type="radio" id="male" name="gender" value="UPI/BHIM"> <label for="male" style="display:inline; font-weight:normal;"> UPI/BHIM</label>&nbsp;&nbsp;
+<input type="radio" id="female" name="gender" value="Netbanking"> <label for="female" style="display:inline; font-weight:normal;"> Netbanking</label>&nbsp;&nbsp;
+<input type="radio" id="other" name="gender" value="Bank Transfer"> <label for="other" style="display:inline; font-weight:normal;"> Bank Transfer</label>
+</div>
+</form>
+<button class="qrbtn" onclick="location.href='qrdisplay.html'">Show QR Code</button>
+
+<button type="submit" class="btn-submit">Donate Now </button>
+
+
+</div>
+
+<footer>
+<p>Copyright © 2022 – 2028 The Earth Foundation India LTD. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

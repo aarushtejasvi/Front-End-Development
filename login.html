@@ -1,0 +1,202 @@
+<html>
+<head>
+<title>Sign Up | The Earth Foundation</title>
+
+<style>
+
+body{
+     background-color: #FBF3D1; 
+     color: #D97D55; 
+     font-family: "Times New Roman", Times, serif;
+     margin: 0;
+     padding: 0;
+     text-align: left;
+     }
+
+header{
+       background-color: #1A2421;
+       padding: 45px 20px;
+       text-align: left;
+       color: white;
+       margin-bottom: 30px;
+       }
+
+header h1{
+          font-family: "Times New Roman", Times, serif; 
+          font-size: 40px; 
+          font-weight: normal; 
+          text-decoration: underline;
+          letter-spacing: 5px; 
+          text-transform: uppercase;
+          margin: 0;
+          line-height: 1.2;
+         }
+
+header p{
+         font-family: "Times New Roman", Times, serif;
+         font-style: italic;
+         font-size: 18px; 
+         margin-top: 20px; 
+         letter-spacing: 1px;
+        }
+
+#form{
+      background-color: white;
+      color: black;
+      margin: 30px 20px;
+      padding: 40px;
+      height: auto; 
+      width: 450px;
+      border: 1px solid black;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+     }
+
+#form h1, #form h3, #form h4{
+                             margin-bottom: 5px;
+                             margin-top: 15px;
+                             font-size: 18px;
+                             text-align: left;
+                             }
+
+input{
+      width: 100%;
+      height: 35px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding-left: 10px;
+      box-sizing: border-box; 
+     }
+
+.exist{
+       text-align: left;
+       margin: 10px 20px;
+      }
+
+a{
+  color: #D97D55;
+  text-decoration: none;
+ }
+
+a:hover{
+        text-decoration: underline;
+       }
+
+.submit-btn{
+            width: 150px; 
+            height: 45px; 
+            font-size: 20px; 
+            color: #D97D55;
+            background-color: white;
+            border: 2px solid #D97D55;
+            cursor: pointer;
+            margin-top: 25px;
+            font-weight: bold;
+            }
+
+.submit-btn:hover{
+                  background-color: #D97D55;
+                  color: white;
+                  }
+
+.footer{
+        margin: 20px;
+        text-align: center;
+	color:black;
+       }
+ 
+.header-btn{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 20px;
+            font-family: "Times New Roman", serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+           }
+
+.header-btn:hover{
+                  background-color: #D97D55;
+                  border-color: #D97D55;
+                  }   
+</style>
+</head>
+
+<body><center>
+
+<header><center>
+<button class="header-btn" onclick="location.href='index.html'">Home</button>
+<h1>THE EARTH FOUNDATION INDIA<sup>&reg;</sup></h1>
+<p>*an initiative of The Earth Company*</p>
+</header>
+
+<h1 style="margin-left: 20px; text-decoration: underline;"> Create an account </h1>
+
+<div class="exist"><center><a href="ExistUser.html"><i><u>Already an existing user, Sign In</u></i></a></center></div>
+
+<div id="form">
+
+<label><h1>Enter your name</h1></label>
+<input type="text" id="name_input" required>
+<br><br>
+<label><h1>Enter your Email id</h1></label>
+<input type="text" id="email_input" required>
+<br><br>
+<label><h1>Enter your phone number:</h1></label> 
+<input type="text" id="number_input" required>
+<br><br>
+<label><h1>Enter your permanent address:</h1></label>
+<input type="text" id="address_input" required>
+<br><br>
+<label><h3>Enter your Date of Birth:</h3></label>
+<input type="date" id="dob_input" required>
+<br><br>
+<label><h4>Set a strong password:</h4></label>
+<input type="password" id="pass_input" required>
+<br><br>
+<label><h4>Confirm your password:</h4></label>
+<input type="password" id="pass2_input" required>
+<br><br>
+<center><button class="submit-btn" onclick="validateSignUp()">Submit</button></center>
+<br>
+</div>
+
+<script>
+
+function validateSignUp() {
+                           var name = document.getElementById("name_input").value;
+                           var email = document.getElementById("email_input").value;
+            		   var number = document.getElementById("number_input").value;
+            		   var address = document.getElementById("address_input").value;
+            		   var dob = document.getElementById("dob_input").value;
+            		   var pass = document.getElementById("pass_input").value;
+            		   var pass2 = document.getElementById("pass2_input").value;
+
+            		   if (name == "" || email == "" || number == "" || address == "" || dob == "" || pass == "") 
+                                   alert("One or more inputs cannot be empty"); 
+                           else if (pass != pass2) 
+                                   alert("Passwords must match"); 
+			   else{
+                                document.body.innerHTML = `
+                                <div style='text-align:left; padding: 50px; font-family: "Times New Roman", serif;'>
+                                <h1 style='color: #D97D55;'>Congratulations! Sign up Successful</h1>
+                                <h3>Volunteer id: 2025/12/12/56678</h3>
+                                <br>
+                                <a href="index.html" style="color: #1A2421; text-decoration: underline;">Home</a>
+                                </div>`;
+                               }
+                           };
+    
+</script>
+
+<br><br>
+
+<center><p class="footer">Copyright © 2022 – 2028 The Earth Foundation India LTD. All rights reserved.</p></center>
+
+</body></center>
+</html>

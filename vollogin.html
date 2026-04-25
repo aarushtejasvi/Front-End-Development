@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>Volunteer Login | The Earth Foundation</title>
+<style>
+
+header{
+       background-color: #1A2421; 
+       padding: 50px 20px;
+       text-align: center;
+       color: white;
+       margin-bottom: 30px;
+      }
+
+header h1{
+          font-size: 2.5rem;
+          text-decoration: underline;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          margin: 0;
+         }
+
+header p{
+         font-style: italic;
+         margin-top: 10px;
+        }
+
+body{
+     background-color: #FBF3D1; 
+     color: #D97D55;           
+     font-family: "Times New Roman", Times, serif;
+     margin: 0;
+     padding-bottom: 50px;
+    }
+
+.login-container{
+                 background-color: white;
+                 border: 1px solid black;
+                 width: 450px;
+                 margin: 0 auto;
+                 padding: 30px;
+                 text-align: center;
+                 border-radius: 8px; 
+                 box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+                }
+
+.login-container h2{
+            	    margin-bottom: 10px;
+                    font-size: 20px;
+                   }
+
+input{
+      width: 350px;
+      height: 35px;
+      margin-bottom: 25px;
+      border: 1px solid #ccc;
+      padding-left: 10px;
+     }
+
+.signin-btn{
+            width: 150px;
+            height: 45px;
+            font-size: 20px;
+            color: #D97D55;
+            background-color: white;
+            border: 2px solid #D97D55;
+            cursor: pointer;
+            font-weight: bold;
+           }
+
+.signin-btn:hover{
+            	  background-color: #D97D55;
+            	  color: white;
+                 }
+    
+.header-btn{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 20px;
+            font-family: "Times New Roman", serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+           }
+
+.header-btn:hover{
+                  background-color: #D97D55;
+                  border-color: #D97D55;
+                  }   
+
+</style>
+</head>
+
+<body>
+
+<header>
+<button class="header-btn" onclick="location.href='index.html'">Home</button>
+<h1>The Earth Foundation India<sup>&reg;</sup></h1>
+<p>*an initiative of The Earth Company*</p>
+</header>
+
+<center><h1><b>Volunteer Login</b></h1></center>
+
+<div class="login-container">
+
+<label for="vid"><h2>Enter your Volunteer ID:</h2></label>
+<input type="text" id="vid" placeholder="XYZ-2025-001" required>
+
+<label for="pass"><h2>Enter your Password:</h2></label>
+<input type="password" id="pass" required>
+
+<br>
+
+<button class="signin-btn" onclick="validation()">Sign In</button>
+    
+<script>
+function validation(){
+                      var x = document.getElementById("vid").value;
+		      var y = document.getElementById("pass").value;
+                      
+		      if(x.trim() == "" || y.trim() == ""){
+			alert("One or more inputs cannot be empty");
+		        }
+		      else{
+                           document.body.innerHTML = `
+                           <div style='text-align:left; padding: 50px; font-family: "Times New Roman", serif;'>
+                           <h1 style='color: #D97D55;'>Congratulations! Sign in Successful</h1>
+                           <h2>Welcome Back!</h2>
+                           <br>
+                           <a href="index.html" style="color: #1A2421; text-decoration: underline;">Home</a>
+                           </div>`;
+                          }
+                     }
+
+
+
+
+</div>
+
+<footer>        
+<center><p>Copyright © 2022 – 2028 The Earth Foundation India LTD. All rights reserved.</p><center>
+</footer>
+
+</body>
+</html>
