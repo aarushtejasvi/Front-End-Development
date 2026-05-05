@@ -165,7 +165,20 @@ a:hover{
 <center><button class="submit-btn" onclick="validateSignUp()">Submit</button></center>
 <br>
 </div>
+app.post("/api/login", (req, res) => {
+    const { email, password } = req.body;
 
+    const sql = "SELECT * FROM users WHERE email=? AND password=?";
+    db.query(sql, [email, password], (err, result) => {
+        if (err) return res.json(err);
+
+        if (result.length > 0) {
+            res.json({ message: "Login successful" });
+        } else {
+            res.json({ message: "Invalid credentials" });
+        }
+    });
+});
 <script>
 
 function validateSignUp() {
