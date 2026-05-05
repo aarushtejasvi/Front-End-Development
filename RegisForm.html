@@ -219,5 +219,16 @@ I certify that all information provided is true and accurate. I agree to abide b
 <p>Copyright © 2022 – 2028 The Earth Foundation India LTD. All rights reserved.</p>
 </footer>
 
+app.post("/api/register", (req, res) => {
+    const { name, email, password } = req.body;
+
+    const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    db.query(sql, [name, email, password], (err) => {
+        if (err) return res.json(err);
+        res.json({ message: "User registered" });
+    });
+});
+
+
 </body>
 </html>
