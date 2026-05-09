@@ -165,47 +165,112 @@ a:hover{
 <center><button class="submit-btn" onclick="validateSignUp()">Submit</button></center>
 <br>
 </div>
-app.post("/api/login", (req, res) => {
-    const { email, password } = req.body;
 
-    const sql = "SELECT * FROM users WHERE email=? AND password=?";
-    db.query(sql, [email, password], (err, result) => {
-        if (err) return res.json(err);
-
-        if (result.length > 0) {
-            res.json({ message: "Login successful" });
-        } else {
-            res.json({ message: "Invalid credentials" });
-        }
-    });
-});
 <script>
 
-function validateSignUp() {
-                           var name = document.getElementById("name_input").value;
-                           var email = document.getElementById("email_input").value;
-            		   var number = document.getElementById("number_input").value;
-            		   var address = document.getElementById("address_input").value;
-            		   var dob = document.getElementById("dob_input").value;
-            		   var pass = document.getElementById("pass_input").value;
-            		   var pass2 = document.getElementById("pass2_input").value;
 
-            		   if (name == "" || email == "" || number == "" || address == "" || dob == "" || pass == "") 
-                                   alert("One or more inputs cannot be empty"); 
-                           else if (pass != pass2) 
-                                   alert("Passwords must match"); 
-			   else{
-                                document.body.innerHTML = `
-                                <div style='text-align:left; padding: 50px; font-family: "Times New Roman", serif;'>
-                                <h1 style='color: #D97D55;'>Congratulations! Sign up Successful</h1>
-                                <h3>Volunteer id: 2025/12/12/56678</h3>
-                                <br>
-                                <a href="index.html" style="color: #1A2421; text-decoration: underline;">Home</a>
-                                </div>`;
-                               }
-                           };
-    
+
+async function validateSignUp() {
+
+    var name = document.getElementById("name_input").value;
+    var email = document.getElementById("email_input").value;
+    var number = document.getElementById("number_input").value;
+    var address = document.getElementById("address_input").value;
+    var dob = document.getElementById("dob_input").value;
+    var pass = document.getElementById("pass_input").value;
+    var pass2 = document.getElementById("pass2_input").value;
+
+    if (
+        name == "" ||
+        email == "" ||
+        number == "" ||
+        address == "" ||
+        dob == "" ||
+        pass == ""
+    ) {
+
+        alert("One or more inputs cannot be empty");
+        return;
+
+    }
+
+    if (pass != pass2) {
+
+        alert("Passwords must match");
+        return;
+
+    }
+
+    const formData = {
+
+        name: name,
+        email: email,
+        phone: number,
+        address: address,
+        dob: dob,
+        password: pass
+
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:3000/api/signup", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(formData)
+
+        });
+
+        const result = await response.json();
+
+        alert(result.message);
+
+        if(result.message === "Signup successful") {
+
+            document.body.innerHTML = `
+
+            <div style='text-align:left; padding: 50px; font-family: "Times New Roman", serif;'>
+
+            <h1 style='color: #D97D55;'>
+            Congratulations! Sign up Successful
+            </h1>
+
+            <h3>
+            Volunteer account created successfully
+            </h3>
+
+            <br>
+
+            <a href="index.html"
+            style="color: #1A2421; text-decoration: underline;">
+            Home
+            </a>
+
+            </div>
+
+            `;
+
+        }
+
+    }
+
+    catch(error) {
+
+        console.log(error);
+        alert("Signup failed");
+
+    }
+
+}
+
 </script>
+    
+
 
 <br><br>
 
