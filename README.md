@@ -1,1 +1,1 @@
-Link to the webpage: (theearthfoundation-project.netlify.app)
+[Link to the webpage](theearthfoundation-project.netlify.app)
